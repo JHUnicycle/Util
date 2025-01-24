@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 TARGET_DIR="$1"
 
@@ -28,4 +28,3 @@ find "$TARGET_DIR" -type f | while read file; do
 done
 
 echo "Completed！"
-
