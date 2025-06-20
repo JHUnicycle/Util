@@ -1,58 +1,20 @@
-# 工具库
+# 工具库集合
 
-## 编码转换工具
+这个仓库包含了多个实用工具项目，每个工具都有特定的功能和用途。
 
-### Shell 版本
+## 项目列表
 
-`convert.sh`: 将指定目录中的文件从 GB2312 转换为 UTF-8
+### 编码转换工具
 
-```bash
-sudo chmod +x convert.sh
-./convert.sh /path/to/your/directory
-```
+提供了两个版本的文件编码转换工具，用于将文件从各种编码格式转换为UTF-8：
 
-### Python 版本
+- **Shell版本**：位于`shell/`目录，提供基本的GB2312到UTF-8的转换功能。
+- **Python版本**：位于`python/`目录，提供更强大的功能，支持多种编码格式、文件过滤和备份等高级特性。
 
-`convert.py`: 一个更强大的编码转换工具，支持多种编码格式（如 GBK、Big5 等）转换为 UTF-8
+### 最小二乘法拟合工具
 
-#### 功能特点
+位于`Least Squares Method/`目录，这是一个使用Python实现的数据拟合工具，可以通过最小二乘法对数据进行线性拟合并可视化结果。
 
--   自动检测文件编码
--   支持指定文件扩展名过滤
--   支持二进制文件检测和跳过
--   支持文件备份
--   可配置编码检测置信度阈值
+## 使用说明
 
-#### 使用方法
-
-1. 安装依赖：
-
-```bash
-pip install -r requirements.txt
-```
-
-2. 运行脚本：
-
-```bash
-python convert.py <目录路径> [选项]
-```
-
-#### 可用选项
-
--   `-e, --extensions`: 指定要处理的文件扩展名，例如：`.txt .csv`
--   `-c, --confidence`: 设置编码检测的最小置信度阈值（0-1.0），默认 0.5
--   `-b, --backup`: 转换前创建.bak 备份文件
--   `-sb, --skip-binary`: 跳过可能的二进制文件
-
-#### 使用示例
-
-```bash
-# 转换指定目录下的所有文件
-python convert.py /path/to/directory
-
-# 只转换txt和csv文件，并创建备份
-python convert.py /path/to/directory -e .txt .csv -b
-
-# 设置更高的置信度阈值并跳过二进制文件
-python convert.py /path/to/directory -c 0.8 -sb
-```
+每个工具的详细使用方法请参考其对应子目录中的README文件。
